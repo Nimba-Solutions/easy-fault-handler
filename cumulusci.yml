@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.1'
+project:
+    name: easy-fault-handler
+    package:
+        name: easy-fault-handler
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/easy-fault-handler/tests
+            options:
+                outputdir: robot/easy-fault-handler/results
+
+    robot_testdoc:
+        options:
+            path: robot/easy-fault-handler/tests
+            output: robot/easy-fault-handler/doc/easy-fault-handler_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
